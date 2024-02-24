@@ -7,16 +7,32 @@
   font-style: normal;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.naoExibir{
-    display: none;
+.naoExibir {
+  display: none;
 }
 
-.exibir{
-    display: block;
+.exibir {
+  display: block;
+}
+
+@media (max-width: 853px) {
+  #divPai {
+    width: 600px;
+  }
+}
+
+@media (max-width: 653px) {
+  #divPai {
+    width: 400px;
+  }
+
+  #textCrie {
+    text-align: center;
+  }
 }

@@ -10,22 +10,23 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link rel="shortcut icon" href="public/user.ico" type="image/x-icon">
   </head>
   <body>
-    <div class="w-full flex flex-col items-center bg-[#202020] pb-[200px]">
-      <div class="w-[800px] bg-[#fff] mt-[60px] rounded-md montserrat p-[40px]">
+    <div class="w-full flex flex-col items-center bg-[#202020] pt-[60px] pb-[60px]">
+      <div class="w-[800px] bg-[#fff] rounded-md montserrat p-[40px]" id="divPai">
         <div
           class="flex justify-center text-5xl pb-[50px] text-[#0C86E3] font-semibold"
         >
-          <p>Crie uma nova conta</p>
+          <p id="textCrie">Crie uma nova conta</p>
         </div>
         <form action="#">
             <div>
-              <p class="text-xl">Nome <span class="text-[red]">*</span></p>
+              <p class="text-xl #0C86E3">Nome <span class="text-[red]">*</span></p>
               <input
                 type="text"
                 id="nomeUsuario"
-                class="w-full pt-[10px] outline-none border-b border-black text-xl"
+                class="w-full pt-[10px] outline-none border-b border-[#A7A7A7] text-xl"
                 required
               />
             </div>
@@ -33,13 +34,13 @@
               <p class="text-xl">Sobrenome: <span class="text-[red]">*</span></p>
               <input
                 type="text"
-                class="w-full pt-[10px] outline-none border-b border-black text-xl"
+                class="w-full pt-[10px] outline-none border-b border-[#A7A7A7] text-xl"
                 required
               />
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Email: <span class="text-[red]">*</span></p>
-              <div class="flex border-b border-black">
+              <div class="flex border-b border-[#A7A7A7]">
                 <input
                   type="text"
                   class="w-full pt-[10px] outline-none text-xl"
@@ -115,14 +116,14 @@
               <p class="text-xl">Senha: <span class="text-[red]">*</span></p>
               <input
                 type="password"
-                class="w-full pt-[10px] outline-none border-b border-black text-3xl"
+                class="w-full pt-[10px] outline-none border-b border-[#A7A7A7] text-3xl"
                 id="senha"
                 required
               />
               <div class="mt-[20px]">
-                <p class="text-[#C2C2C2]" id="caracterLength">
-                  <span><i  class="bi bi-check-circle text-lg naoExibir"></i></span>
-                  <span><i  class="bi bi-x-circle text-lg naoExibir"></i></span>
+                <p class="text-[#C2C2C2] flex gap-[5px] items-center" id="caracterLength">
+                  <i  id="iconCTrue" class="bi bi-check-circle text-lg naoExibir"></i>
+                  <i  id="iconCFalse" class="bi bi-x-circle text-lg naoExibir"></i>
                   Conter mais de 10 carácteres
                 </p>
                 <p class="text-[#C2C2C2] flex gap-[5px] items-center" id="caracterEsp">
@@ -130,13 +131,9 @@
                 <i  id="iconFalse" class="bi bi-x-circle text-lg naoExibir"></i>
                   Conter 1 ou mais caracteres especiais: ( $ * _ - # @ ! )
                 </p>
-                <p class="text-[#C2C2C2]" id="letraM">
-                  <span>
-                    <i  class="bi bi-check-circle text-lg naoExibir"></i>
-                </span>
-                  <span>
-                    <i class="bi bi-x-circle text-lg naoExibir"></i>
-                </span>
+                <p class="text-[#C2C2C2] flex gap-[5px] items-center" id="letraM">
+                    <i  id="iconLTrue" class="bi bi-check-circle text-lg naoExibir"></i>
+                    <i id="iconLFalse" class="bi bi-x-circle text-lg naoExibir"></i>
                   Conter 1 ou mais letras maiúsculas
                 </p>
               </div>
@@ -145,23 +142,46 @@
               <p class="text-xl">
                 Confirme sua senha: <span class="text-[red]">*</span>
               </p>
-              <input
-                type="password"
-                class="w-full pt-[10px] outline-none border-b border-black text-3xl"
-                required
-              />
+              <div class="flex border-b border-[#A7A7A7]">
+                <input
+                  type="password"
+                  class="w-full pt-[10px] outline-none text-3xl"
+                  id="senhaConfirm"
+                  required
+                />
+
+                <div>
+                  <i
+                    id="iconCheckSenha"
+                    class="bi bi-check2 text-2xl text-[#44B342] naoExibir"
+                  ></i>
+                </div>
+              </div>
               <div class="mt-[20px]">
-                <p class="text-[#C2C2C2]">As senhas não são iguais</p>
+                <p class="text-[#C2C2C2] naoExibir" id="senhaFalse">As senhas não são iguais</p>
               </div>
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Telefone <span class="text-[red]">*</span></p>
-              <input
-                type="text"
-                class="w-full pt-[10px] outline-none border-b border-black text-xl"
-                maxlength="16"
-                required
-              />
+              <div class="flex border-b border-[#A7A7A7]">
+                <input
+                  type="text"
+                  class="w-full pt-[10px] outline-none text-xl"
+                  maxlength="11"
+                  id="inputTelefone"
+                  required
+                />
+
+                <div>
+                  <i
+                    id="iconCheckNumber"
+                    class="bi bi-check2 text-2xl text-[#44B342] naoExibir"
+                  ></i>
+                </div>
+              </div>
+              <div class="mt-[20px]">
+                <p class="text-[#C2C2C2] naoExibir" id="numberValid">Escreva números válidos</p>
+              </div>
             </div>
             <div class="flex justify-center pt-[40px]">
               <button class="w-full bg-[#0C86E3] rounded-md">
@@ -170,7 +190,7 @@
                 </p>
               </button>
             </div>
-                  </div>
+            </div>
         </form>
     </div>
   </body>
