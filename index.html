@@ -23,20 +23,24 @@
         <form action="#">
             <div>
               <p class="text-xl #0C86E3">Nome <span class="text-[red]">*</span></p>
-              <input
-                type="text"
-                id="nomeUsuario"
-                class="w-full pt-[10px] outline-none border-b border-[#A7A7A7] text-xl"
-                required
-              />
+              <div class="flex border-b border-[#A7A7A7]">
+                <input
+                  type="text"
+                  id="nomeUsuario"
+                  class="w-full pt-[10px] outline-none text-xl"
+                  required
+                />
+              </div>
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Sobrenome: <span class="text-[red]">*</span></p>
-              <input
-                type="text"
-                class="w-full pt-[10px] outline-none border-b border-[#A7A7A7] text-xl"
-                required
-              />
+              <div class="flex border-b border-[#A7A7A7]">
+                <input
+                  type="text"
+                  class="w-full pt-[10px] outline-none  text-xl"
+                  required
+                />
+              </div>
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Email: <span class="text-[red]">*</span></p>
@@ -114,12 +118,14 @@
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Senha: <span class="text-[red]">*</span></p>
-              <input
-                type="password"
-                class="w-full pt-[10px] outline-none border-b border-[#A7A7A7] text-3xl"
-                id="senha"
-                required
-              />
+              <div class="flex border-b border-[#A7A7A7]">
+                <input
+                  type="password"
+                  class="w-full pt-[10px] outline-none text-3xl"
+                  id="senha"
+                  required
+                />
+              </div>
               <div class="mt-[20px]">
                 <p class="text-[#C2C2C2] flex gap-[5px] items-center" id="caracterLength">
                   <i  id="iconCTrue" class="bi bi-check-circle text-lg naoExibir"></i>
