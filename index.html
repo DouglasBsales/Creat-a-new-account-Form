@@ -23,23 +23,42 @@
         <form action="#">
             <div>
               <p class="text-xl #0C86E3">Nome <span class="text-[red]">*</span></p>
-              <div class="flex border-b border-[#A7A7A7]">
-                <input
-                  type="text"
-                  id="nomeUsuario"
-                  class="w-full pt-[10px] outline-none text-xl"
-                  required
-                />
+                <div class="flex border-b border-[#A7A7A7]">
+                    <input
+                      type="text"
+                      id="nomeUsuario"
+                      class="w-full pt-[10px] outline-none text-xl"
+                      required
+                    />
+                    <div>
+                      <i
+                        id="iconCheckUser"
+                        class="bi bi-check2 text-2xl text-[#44B342] naoExibir"
+                      ></i>
+                    </div>
+              </div>
+              <div class="pt-[10px]">
+                <p class="text-[#D13100] naoExibir" id="textErro">Escreva um nome válido</p>
               </div>
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Sobrenome: <span class="text-[red]">*</span></p>
               <div class="flex border-b border-[#A7A7A7]">
-                <input
-                  type="text"
-                  class="w-full pt-[10px] outline-none  text-xl"
-                  required
-                />
+                    <input
+                      type="text"
+                      class="w-full pt-[10px] outline-none  text-xl"
+                      id="sobrenome"
+                      required
+                    />
+                    <div>
+                      <i
+                        id="iconCheckSob"
+                        class="bi bi-check2 text-2xl text-[#44B342] naoExibir"
+                      ></i>
+                    </div>
+              </div>
+              <div class="pt-[10px]">
+                <p class="text-[#D13100] naoExibir" id="textErro2">Escreva um nome válido</p>
               </div>
             </div>
             <div class="pt-[20px]">
@@ -72,6 +91,7 @@
                   class="w-[70px] h-[50px] pt-[10px] outline-none border rounded-md text-2xl text-center"
                   maxlength="2"
                   placeholder="Dia"
+                  id="day"
                   required
                 />
                 <select
@@ -80,7 +100,7 @@
                   class="w-[150px] h-[50px] pt-[10px] outline-none border rounded-md text-xl text-center"
                   required
                 >
-                  <option value="mes">Mês</option>
+                  <option disabled selected value="mes">Mês</option>
                   <option value="janeiro">Janeiro</option>
                   <option value="fevereiro">Fevereiro</option>
                   <option value="marco">Março</option>
@@ -99,8 +119,12 @@
                   class="w-[80px] h-[50px] pt-[10px] outline-none border rounded-md text-2xl text-center font-light"
                   maxlength="4"
                   placeholder="Ano"
+                  id="ano"
                   required
                 />
+              </div>
+              <div class="pt-[10px]">
+                <p class="text-[#D13100] naoExibir" id="textErroData">Escreva uma data válida.</p>
               </div>
             </div>
             <div class="pt-[20px]">
@@ -176,6 +200,7 @@
                   maxlength="11"
                   id="inputTelefone"
                   required
+                  placeholder="(DD) + número"
                 />
 
                 <div>
@@ -186,7 +211,7 @@
                 </div>
               </div>
               <div class="mt-[20px]">
-                <p class="text-[#C2C2C2] naoExibir" id="numberValid">Escreva números válidos</p>
+                <p class="text-[#D13100] naoExibir" id="numberValid">Escreva números válidos</p>
               </div>
             </div>
             <div class="flex justify-center pt-[40px]">

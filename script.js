@@ -1,3 +1,78 @@
+function validarNomeESobrenome() {
+  let inputNome = document.getElementById("nomeUsuario").value;
+  let inputSobrenome = document.getElementById("sobrenome").value;
+  let textErro1 = document.getElementById("textErro");
+  let textErroSobrenome = document.getElementById("textErro2");
+  let iconCheckUser = document.getElementById("iconCheckUser");
+
+  const caracteres = /[!@#$%¨&*()\-_+{}[\]`´^~;.:\/='1-9']/;
+  if (caracteres.test(inputNome)) {
+    textErro1.classList.remove("naoExibir");
+  } else {
+    textErro1.classList.add("naoExibir");
+  }
+
+  if (caracteres.test(inputSobrenome)) {
+    textErroSobrenome.classList.remove("naoExibir");
+  } else {
+    textErroSobrenome.classList.add("naoExibir");
+  }
+
+  if (inputNome.length >= 3) {
+    iconCheckUser.classList.remove("naoExibir");
+  }
+
+  if (inputNome.length === 0) {
+    iconCheckUser.classList.add("naoExibir");
+  }
+
+  // nome a cima
+
+  // sobrenome abaixo
+
+  if (caracteres.test(inputSobrenome)) {
+    textErroSobrenome.classList.remove("naoExibir");
+  } else {
+    textErroSobrenome.classList.add("naoExibir");
+  }
+
+  if (caracteres.test(inputSobrenome)) {
+    textErroSobrenome.classList.remove("naoExibir");
+  } else {
+    textErroSobrenome.classList.add("naoExibir");
+  }
+
+  if (inputSobrenome.length >= 3) {
+    iconCheckSob.classList.remove("naoExibir");
+  }
+
+  if (inputSobrenome.length === 0) {
+    iconCheckSob.classList.add("naoExibir");
+  }
+}
+
+document.addEventListener("keyup", validarNomeESobrenome);
+
+function validarDataNascimento() {
+  let day = document.getElementById("day").value;
+  let textErro = document.getElementById("textErroData");
+  let ano = document.getElementById("ano").value;
+
+  if (day.length === 0 || day == "0" || day >= "32") {
+    textErro.classList.remove("naoExibir");
+  } else {
+    textErro.classList.add("naoExibir");
+  }
+
+  if (ano.length === 0 || ano == "0" || ano <= "1924" || ano.length === 3) {
+    textErro.classList.remove("naoExibir");
+  } else {
+    textErro.classList.add("naoExibir");
+  }
+}
+
+document.addEventListener("keyup", validarDataNascimento);
+
 function validarEmail() {
   let inputEmail = document.getElementById("email").value;
   let icon = document.getElementById("iconCheck");
@@ -115,24 +190,29 @@ document.addEventListener("keyup", confirmSenha);
 
 function verificarTelefone() {
   let inputTelefone = document.getElementById("inputTelefone").value;
-  let numebrValid = document.getElementById("numberValid");
+  let numberValid = document.getElementById("numberValid");
   let iconCheckNumber = document.getElementById("iconCheckNumber");
 
   if (isNaN(inputTelefone)) {
-    numebrValid.style.color = "#D13100";
-    numebrValid.classList.add("exibir");
+    numberValid.classList.add("exibir");
   }
 
   if (inputTelefone.length === 0) {
-    numebrValid.classList.remove("exibir");
+    numberValid.classList.remove("exibir");
   }
-
 
   if (/^\d+$/.test(inputTelefone) && inputTelefone.length === 11) {
     iconCheckNumber.classList.add("exibir");
   } else {
     iconCheckNumber.classList.remove("exibir");
   }
+
+  if (/^0+$/.test(inputTelefone)) {
+    numberValid.classList.remove("naoExibir");
+    iconCheckNumber.classList.remove("exibir");
+} else {
+    numberValid.classList.add("naoExibir");
+}
 }
 
 document.addEventListener("keyup", verificarTelefone);
