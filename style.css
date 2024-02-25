@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .montserrat {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -29,7 +34,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (max-width: 653px) {
   #divPai {
-    width: 400px;
+    width: 380px;
   }
 
   #textCrie {
