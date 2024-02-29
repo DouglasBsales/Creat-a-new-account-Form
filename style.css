@@ -34,7 +34,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (max-width: 653px) {
   #divPai {
-    width: 380px;
+    width: 370px;
   }
 
   #textCrie {
@@ -42,14 +42,15 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   #modal {
-    width: 370px;
+    width: 340px;
+    text-align: center;
   }
 }
 
 .closeModal {
   position: absolute;
   z-index: 1000;
-  top: 45%;
+  top: 25%;
   opacity: 0;
   display: none;
   visibility: hidden;
