@@ -70,3 +70,19 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
   transition: 0.5s ease;
 }
+
+.error {
+  border-bottom: 1px solid red;
+}
+
+.borderNormal {
+  border-bottom: 1px solid #a7a7a7;
+}
+
+.borderNormalData {
+  border: 1px solid #e5e7eb;
+}
+
+.borderErroData {
+  border: 1px solid red;
+}

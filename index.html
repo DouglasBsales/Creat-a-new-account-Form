@@ -23,7 +23,7 @@
         <form action="#">
             <div>
               <p class="text-xl #0C86E3">Nome <span class="text-[red]">*</span></p>
-                <div class="flex border-b border-[#A7A7A7]">
+                <div class="flex borderNormal error" id="divNome">
                     <input
                       type="text"
                       id="nomeUsuario"
@@ -43,7 +43,7 @@
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Sobrenome: <span class="text-[red]">*</span></p>
-              <div class="flex border-b border-[#A7A7A7]">
+              <div class="flex borderNormal" id="sobreNome">
                     <input
                       type="text"
                       class="w-full pt-[10px] outline-none  text-xl"
@@ -88,7 +88,7 @@
               <div class="flex gap-[10px] pt-[10px]">
                 <input
                   type="text"
-                  class="w-[70px] h-[50px] pt-[10px] outline-none border rounded-md text-2xl text-center"
+                  class="w-[70px] h-[50px] pt-[10px] outline-none borderNormalData rounded-md text-2xl text-center"
                   maxlength="2"
                   placeholder="Dia"
                   id="day"
@@ -114,7 +114,7 @@
                 </select>
                 <input
                   type="text"
-                  class="w-[80px] h-[50px] pt-[10px] outline-none border rounded-md text-2xl text-center font-light"
+                  class="w-[80px] h-[50px] pt-[10px] outline-none borderNormalData rounded-md text-2xl text-center font-light"
                   maxlength="4"
                   placeholder="Ano"
                   id="ano"
@@ -141,7 +141,7 @@
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Senha: <span class="text-[red]">*</span></p>
-              <div class="flex border-b border-[#A7A7A7]">
+              <div class="flex borderNormal" id="divSenha">
                 <input
                   type="password"
                   class="w-full pt-[10px] outline-none text-3xl"
@@ -171,7 +171,7 @@
               <p class="text-xl">
                 Confirme sua senha: <span class="text-[red]">*</span>
               </p>
-              <div class="flex border-b border-[#A7A7A7]">
+              <div class="flex borderNormal" id="confirmSenha">
                 <input
                   type="password"
                   class="w-full pt-[10px] outline-none text-3xl"
@@ -192,7 +192,7 @@
             </div>
             <div class="pt-[20px]">
               <p class="text-xl">Telefone <span class="text-[red]">*</span></p>
-              <div class="flex border-b border-black">
+              <div class="flex borderNormal" id="divTelefone">
                 <input
                   type="text"
                   class="w-full pt-[10px] outline-none text-xl"

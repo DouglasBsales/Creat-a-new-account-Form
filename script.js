@@ -41,6 +41,7 @@ function validarSobrenome() {
   const inputSobrenome = document.getElementById("sobrenome").value.trim();
   const textErroSob = document.getElementById("textErro2");
   const iconCheckSob = document.getElementById("iconCheckSob");
+  const divSobrenome = document.getElementById("sobreNome");
 
   const caracteres = /[^a-zA-Z]/;
 
@@ -49,6 +50,7 @@ function validarSobrenome() {
   if (inputSobrenome.length >= 3) {
     iconCheckSob.classList.remove("naoExibir");
     textErroSob.classList.add("naoExibir");
+    divSobrenome.classList.add("borderNormal");
 
     isValid = true;
   } else {
@@ -264,9 +266,10 @@ function confirmSenha() {
 document.getElementById("senhaConfirm").addEventListener("keyup", confirmSenha);
 
 function verificarTelefone() {
-  let inputTelefone = document.getElementById("inputTelefone").value;
-  let iconCheckNumber = document.getElementById("iconCheckNumber");
-  let textErroNumber = document.getElementById("numberValid");
+  const inputTelefone = document.getElementById("inputTelefone").value;
+  const iconCheckNumber = document.getElementById("iconCheckNumber");
+  const textErroNumber = document.getElementById("numberValid");
+  const divTelefone = document.getElementById("divTelefone");
 
   isValid = true;
 
@@ -281,6 +284,7 @@ function verificarTelefone() {
   if (inputTelefone.length == 11) {
     iconCheckNumber.classList.remove("naoExibir");
     textErroNumber.classList.add("naoExibir");
+    divTelefone.classList.add('borderNormal')
 
     isValid = true;
   } else {
@@ -298,9 +302,52 @@ document
   .addEventListener("keyup", verificarTelefone);
 
 function validarDados() {
+  if (validarNome() === false) {
+    const divNome = document.getElementById("divNome");
+    divNome.classList.remove("borderNormal");
+  } else {
+    divNome.classList.add("borderNormal");
+  }
+
+  if (validarSobrenome() === false) {
+    const divSobrenome = document.getElementById("sobreNome");
+    divSobrenome.classList.add("error");
+  }
+
+  if (validarDia() === false) {
+    const day = document.getElementById("day");
+    day.classList.remove("borderNormalData");
+    day.classList.add("borderErroData");
+  }
+
+  if (validarAno() === false) {
+    const ano = document.getElementById("ano");
+    ano.classList.remove("borderNormalData");
+    ano.classList.add("borderErroData");
+  }
+
+  if (validarSenha() === false) {
+    const senha = document.getElementById("divSenha");
+    senha.classList.remove("borderNormal");
+    senha.classList.add("error");
+  }
+
+  if (confirmSenha() === false) {
+    const confirmSenha = document.getElementById("confirmSenha");
+    confirmSenha.classList.remove("borderNormal");
+    confirmSenha.classList.add("error");
+  }
+
+  if (verificarTelefone() === false) {
+    const divTelefone = document.getElementById("divTelefone");
+    divTelefone.classList.remove("borderNormal");
+    divTelefone.classList.add("error");
+  }
+
   if (
     validarNome() === true &&
     validarSobrenome() === true &&
+    validarDia() === true &&
     validarDia() === true &&
     validarAno() === true &&
     validarEmail() === true &&
@@ -309,8 +356,6 @@ function validarDados() {
     verificarTelefone() === true
   ) {
     openModalTrue();
-  } else {
-    alert("Insira as informações corretas");
   }
 }
 
